@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> ORIG </title>
+
+  <link rel="icon" href="static/images/orig_logo.png">
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/leaderboard.css">
+  <link rel="stylesheet" href="./static/css/video-player.css">
+
+  <!-- <link href="https://unpkg.com/tabulator-tables@5.5.2/dist/css/tabulator_bulma.min.css" rel="stylesheet">
+  <script type="text/javascript" src="https://unpkg.com/tabulator-tables@5.5.2/dist/js/tabulator.min.js"></script> -->
+  <script type="text/javascript" src="static/js/sort-table.js" defer></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/explorer-index.js"></script>
+  <script src="./static/js/question_card.js"></script>
+
+  <script src="./static/js/leaderboard_testmini.js"></script>  
+  <script src="./data/results/output_folders.js" defer></script>
+  <script src="./data/results/model_scores.js" defer></script>
+
+  <script src="./visualizer/data/data_public.js" defer></script>
+
+  <style>
+    .no-sort {
+        cursor: default;
+        pointer-events: none;
+        background-image: none !important; /* Remove the sort arrow */
+    }
+  </style>
+
+</head>
+<body>
+
+  
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <p style="font-size:18px; display: inline; margin-right: -2px; margin-top: 12px;">🔥</p>
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://arxiv.org/abs/2506.02544">
+            <b>CoRe-MMRAG</b>
+          </a>
+          <a class="navbar-item" href="https://arxiv.org/abs/2506.02544">
+            <b>ORIG</b>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title is-bold">
+            <img src="static/images/orig_logo.png" style="width:1.8em;vertical-align: middle" alt="Logo"/>
+            <span class="ORIG" style="vertical-align: middle">ORIG</span>
+            </h1>
+          <h2 class="subtitle is-2 publication-subtitle is-bold", style="margin-bottom: 20px;">
+            Open Multimodal Retrieval-Augmented <br>  Factual Image Generation
+          </h2>
+          
+          <div class="is-size-5 publication-authors", style="width: 100%; margin: 20px auto;", >
+            <span class="author-block">
+<!--              Yang Tian<sup>1</sup>,</span>-->
+              <a href="https://TyangJN.github.io/" target="_blank">Yang Tian</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://liufancs.github.io/" target="_blank">Fan Liu</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=pdj-Em0AAAAJ&hl=en" target="_blank">Jingyuan Zhang</a><sup>3</sup>,</span>
+            <span class="author-block">
+              <a href="" target="_blank">Wei Bi</a><sup>4</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=1ubmm5YAAAAJ&hl=en" target="_blank">Yupeng Hu</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://liqiangnie.github.io/" target="_blank">Liqiang Nie</a><sup>5</sup>,</span>
+<!--              Liqiang Nie<sup>4</sup>,</span>-->
+            <br>
+            <span class="author-block">
+              Tianyangchn@gmail.com</span>
+            <p><span style="color: red;">▶</span> 1. iLearn Lab, Shandong University</p>
+            <p><span style="color: greenyellow;">▶</span> 2. National University of Singapore</p>
+            <p><span style="color: orange;">▶</span> 3. Kuaishou Technology</p>
+            <p><span style="color: yellow;">▶</span> 4. Independent Researcher</p>
+            <p><span style="color: deepskyblue;">▶</span> 5.  Harbin Institute of Technology (Shenzhen)</p>
+<!--            <p>🔷 4. Harbin Institute of Technology (Shenzhen)</p>-->
+          </div>
+
+
+
+
+          <div class="is-size-5 publication-authors">
+            <!-- <span class="author-block"><sup style="color:#6fbf73;">1</sup>USTC,</span>
+            <span class="author-block"><sup style="color:#ed4b82">2</sup>XMU,</span>
+            <span class="author-block"><sup style="color:#9400D3">3</sup>HKU,</span>
+            <span class="author-block"><sup style="color:#ffac33">4</sup>PKU,</span>
+            <span class="author-block"><sup style="color:#18acfb">5</sup>CUHK,</span>
+            <span class="author-block"><sup style="color:#33ffd6">6</sup>ECNU</span><br> -->
+            <!-- <span class="paper-block"><b style="color:#f41c1c">ICLR 2024 Oral</b> (85 in 7304, 1.2%)</span> -->
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2405.21075"
+                   class="external-link button is-normal is-rounded is-dark">
+                <!-- <a href="https://lupantech.github.io/papers/arxiv23_mathvista.pdf"
+                   class="external-link button is-normal is-rounded is-dark"> -->
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/TyangJN/ORIG"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Leaderboard Link. -->
+              <span class="link-block">
+                <a href="https://huggingface.co/datasets/TyangJN/FIG"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <p style="font-size:18px">🤗</p>
+                  </span>
+                  <span>Dataset</span>
+                </a>
+              </span>
+              <!-- Hugginface Link. -->
+              <!-- <span class="link-block">
+                <a href="#leaderboard"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <p style="font-size:18px">🏆</p>
+                  </span>
+                  <span>Leaderboard</span>
+                </a>
+              </span> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container" style="margin-bottom: 2vh;">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          Large Multimodal Models (LMMs) have achieved remarkable progress in generating photorealistic and prompt-aligned images, but they often produce outputs that contradict verifiable knowledge,
+          especially when prompts involve fine-grained attributes or time-sensitive events. Conventional retrieval-augmented approaches attempt to address this issue by introducing external information,
+          yet they are fundamentally incapable of grounding generation in accurate and evolving knowledge due to their reliance on static sources and shallow evidence integration. To bridge this gap,
+          we introduce ORIG, an agentic open multimodal retrieval-augmented framework for Factual Image Generation (FIG), a new task that requires both visual realism and factual grounding.
+          ORIG iteratively retrieves and filters multimodal evidence from the web and incrementally integrates the refined knowledge into enriched prompts to guide generation.
+          To support systematic evaluation, we build FIG-Eval, a benchmark spanning ten categories across perceptual, compositional, and temporal dimensions.
+          Experiments demonstrate that ORIG substantially improves factual consistency and overall image quality over strong baselines, highlighting the potential of open multimodal retrieval for factual image generation.
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+</div>
+
+<!-- 滑动窗口展示图片 -->
+<div class="cases-slider-container">
+  <div class="cases-slider-content">
+    <!-- sports_18_dir -->
+    <div class="case-card">
+      <img src="static/images/case/sports_18_dir.png" alt="Sports case">
+      <p>
+        <strong>Generate an image showing a comparison between the match balls used in the first and the most recent FIFA World Cup final.</strong><br>
+        <span>GPT-Image-1, Direct Generation</span>
+      </p>
+    </div>
+    
+    <!-- sports_18_mm -->
+    <div class="case-card">
+      <img src="static/images/case/sports_18_mm.png" alt="Sports case">
+      <p>
+        <strong>Generate an image showing a comparison between the match balls used in the first and the most recent FIFA World Cup final.</strong><br>
+        <span>GPT-Image-1, Generation with ORIG</span>
+      </p>
+    </div>
+
+    <!-- transportation_5_dir -->
+    <div class="case-card">
+      <img src="static/images/case/transportation_5_dir.png" alt="Transportation case">
+      <p>
+        <strong>Generate an image of the XPeng Land Aircraft Carrier flying car.</strong><br>
+        <span>GPT-Image-1, Direct Generation</span>
+      </p>
+    </div>
+    
+    <!-- transportation_5_mm -->
+    <div class="case-card">
+      <img src="static/images/case/transportation_5_mm.png" alt="Transportation case">
+      <p>
+        <strong>Generate an image of the XPeng Land Aircraft Carrier flying car.</strong><br>
+        <span>GPT-Image-1, Generation with ORIG</span>
+      </p>
+    </div>
+
+    <!-- transportation_8_dir -->
+    <div class="case-card">
+      <img src="static/images/case/transportation_8_dir.png" alt="Transportation case">
+      <p>
+        <strong>Generate an image of "邪恶大鼠标" on the road.</strong><br>
+        <span>GPT-Image-1, Direct Generation</span>
+      </p>
+    </div>
+    
+    <!-- transportation_8_mm -->
+    <div class="case-card">
+      <img src="static/images/case/transportation_8_mm.png" alt="Transportation case">
+      <p>
+        <strong>Generate an image of "邪恶大鼠标" on the road.</strong><br>
+        <span>GPT-Image-1, Generation with ORIG</span>
+      </p>
+    </div>
+
+    <!-- transportation_20_dir -->
+    <div class="case-card">
+      <img src="static/images/case/transportation_20_dir.png" alt="Transportation case">
+      <p>
+        <strong>Generate an image to show the special entry method of the TEOREMA vehicle.</strong><br>
+        <span>GPT-Image-1, Direct Generation</span>
+      </p>
+    </div>
+    
+    <!-- transportation_20_mm -->
+    <div class="case-card">
+      <img src="static/images/case/transportation_20_mm.png" alt="Transportation case">
+      <p>
+        <strong>Generate an image to show the special entry method of the TEOREMA vehicle.</strong><br>
+        <span>GPT-Image-1, Generation with ORIG</span>
+      </p>
+    </div>
+
+    <!-- sports_8_dir -->
+    <div class="case-card">
+      <img src="static/images/case/sports_8_dir.png" alt="Sports case">
+      <p>
+        <strong>Generate an image of the competition scene featuring the first female Olympic gold medalist.</strong><br>
+        <span>GPT-Image-1, Direct Generation</span>
+      </p>
+    </div>
+
+    <!-- sports_8_img -->
+    <div class="case-card">
+      <img src="static/images/case/sports_8_img.png" alt="Sports case">
+      <p>
+        <strong>Generate an image of the competition scene featuring the first female Olympic gold medalist.</strong><br>
+        <span>GPT-Image-1, Generation with ORIG</span>
+      </p>
+    </div>
+    
+    <!-- people_17_dir -->
+    <div class="case-card">
+      <img src="static/images/case/people_17_dir.png" alt="Sports case">
+      <p>
+        <strong>Generate an image showcasing the winning photograph and the photographer of the Landscape category in the Sony World Photography Awards Open 2025.</strong><br>
+        <span>GPT-Image-1, Direct Generation</span>
+      </p>
+    </div>  
+    <!-- people_17_mm -->
+    <div class="case-card">
+      <img src="static/images/case/people_17_mm.png" alt="Sports case">
+      <p>
+        <strong>Generate an image showcasing the winning photograph and the photographer of the Landscape category in the Sony World Photography Awards Open 2025.</strong><br>
+        <span>GPT-Image-1, Generation with ORIG</span>
+      </p>
+    </div> 
+
+    <!-- event_17_dir -->
+    <div class="case-card">
+      <img src="static/images/case/event_17_dir.png" alt="Sports case">
+      <p>
+        <strong>Generate the working environment when Microsoft was founded.</strong><br>
+        <span>GPT-Image-1, Direct Generation</span>
+      </p>
+    </div>  
+    <!-- event_17_img -->
+    <div class="case-card">
+      <img src="static/images/case/event_17_mm.png" alt="Sports case">
+      <p>
+        <strong>"Generate the working environment when Microsoft was founded.</strong><br>
+        <span>GPT-Image-1, Generation with ORIG. </span>
+      </p>
+    </div> 
+
+    <!-- product_15_dir --> 
+    <div class="case-card">
+      <img src="static/images/case/product_15_dir.png" alt="Sports case">
+      <p>
+        <strong>Generate a picture showing the 5-in-1 clean ability of AquaSense 2 Ultra.</strong><br>
+        <span>GPT-Image-1, Direct Generation</span>
+      </p>
+    </div>  
+    <!-- product_15_mm -->
+    <div class="case-card">
+      <img src="static/images/case/product_15_mm.png" alt="Sports case">
+      <p>
+        <strong>Generate a picture showing the 5-in-1 clean ability of AquaSense 2 Ultra.</strong><br>
+        <span>GPT-Image-1, Generation with ORIG. </span>
+      </p>
+    </div> 
+
+    <!-- landmarks_16_dir --> 
+    <div class="case-card">
+      <img src="static/images/case/landmarks_16_dir.png" alt="Sports case">
+      <p>
+        <strong>Generate an image of the current president of the University of Toronto standing in front of Robarts Library.</strong><br>
+        <span>GPT-Image-1, Direct Generation</span>
+      </p>
+    </div>  
+    <!-- landmarks_16_mm -->
+    <div class="case-card">
+      <img src="static/images/case/landmarks_16_mm.png" alt="Sports case">
+      <p>
+        <strong>Generate an image of the current president of the University of Toronto standing in front of Robarts Library.</strong><br>
+        <span>GPT-Image-1, Generation with ORIG. </span>
+      </p>
+    </div> 
+
+  </div>
+</div>
+<p style="text-align: center; color: #999; font-size: 0.95em; margin: 15px 0 30px 0;">
+  ← Scroll horizontally to view more cases →
+</p>
+
+<style>
+.cases-slider-container {
+  height: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  padding: 15px 0;
+  scroll-behavior: smooth;
+  cursor: grab;
+}
+
+.cases-slider-container:active {
+  cursor: grabbing;
+}
+
+.cases-slider-content {
+  display: inline-flex;
+  gap: 10px;
+  padding: 0 20px;
+}
+
+.case-card {
+  flex: 0 0 auto;
+  width: auto;
+  text-align: center;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.case-card img {
+  height: 300px;
+  width: auto;
+  display: block;
+  margin: 0 auto 15px auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.case-card p {
+  white-space: normal;
+  max-width: 250px;
+  margin: 0 auto;
+  font-size: 14px;
+  color: #333;
+  line-height: 1.5;
+}
+
+.case-card span {
+  color: #666;
+  font-size: 13px;
+}
+</style>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+  <h1 class="title is-1 mathvista_other">
+    <span class="mathvista_other" style="vertical-align: middle">Factual Image Generation</span>
+  </h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <!-- Task Definition with Side-by-Side Layout -->
+    <div class="columns is-centered has-text-centered" style="margin-bottom: 2vh;">
+      <div class="column is-10">
+        <h2 class="title is-3">Task Definition</h2>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-10">
+        <div class="content has-text-justified">
+          We formalize FIG as a new task setting where the defining goal is to ensure factual consistency in generated images. Formally, given a query prompt <i>P</i>, 
+          the task requires producing an image that is semantically aligned with <i>P</i>, and grounded in verifiable knowledge about entities, attributes, relations, and temporal events. Specifically, factual consistency in FIG spans three dimensions: <strong>Perceptual Fidelity</strong>, ensuring faithful perception and accurate rendering of objects' visual appearance; <strong>Compositional Consistency</strong>, which enforces accurate object properties and spatial relations, and <strong>Temporal Consistency</strong>, which ensures proper depiction of event timing and entity states. Unlike conventional image generation, FIG requires grounding in external evidence beyond the limited and static parametric memory of LMMs. In practice, this necessitates open retrieval from the web, where textual and visual evidence contribute complementary knowledge to support Perceptual Fidelity and Compositional Consistency, while the real-time nature of retrieval supplies updated information essential for Temporal Consistency.
+        </div>
+      </div>
+    </div>
+    <div class="columns is-centered" style="margin-top: 0.1vh;">
+      <div class="column is-10 has-text-centered">
+        <img src="static/images/thesis_pdf/Motivation.png" style="width: 60%; height: auto;">
+        <p style="text-align: left; margin-top: 1vh; color: #666; font-size: 13px;"><strong>Motivation of factual image generation (FIG) with open multimodal retrieval:</strong> (a) Reliance on internal knowledge alone often leads to outdated or hallucinated content. (b) Incorporating external information improves grounding but remains constrained by static and unimodal sources. (c) Leveraging open retrieval of multimodal evidence integrates evolving knowledge and complementary cues to achieve FIG.</p>
+      
+      </div>
+    </div>
+    <!--/ Task Definition. -->
+  </div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+  <h1 class="title is-1 mathvista_other">
+    <span class="mathvista_other" style="vertical-align: middle">Method</span>
+  </h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="margin-bottom: 2vh;">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h2 class="title is-3">ORIG</h2>
+        <div class="columns is-centered">
+          <div class="column is-10">
+            <div class="content has-text-justified">
+              We propose ORIG, an agentic open multimodal retrieval-augmented framework that grounds image generation in verifiable knowledge. 
+              As illustrated in the figure below, ORIG adopts an iterative pipeline that plans sub-queries, retrieves modality-specific evidence, 
+              filters noise through coarse-to-fine filtering, and integrates refined knowledge into enriched prompts that guide factual image generation. 
+              The framework comprises three modules: <strong>Open Multimodal Retrieval Module</strong> that collects and filters web-scale evidence through adaptive 
+              query planning and sufficiency evaluation; <strong>Prompt Construction Module</strong> that integrates the input prompt with extracted features from filtered 
+              evidence to create generation-ready prompts, and <strong>Image Generation Module</strong> that produces factually grounded images based on the enriched prompts.
+            </div>
+          </div>
+        </div>
+        <div class="columns is-centered" style="margin-top: 0.1vh;">
+          <div class="column is-10 has-text-centered">
+            <img src="static/images/thesis_pdf/orig.png" style="width: 100%; height: auto;">
+            <p style="text-align: left; margin-top: 1vh; color: #666; font-size: 13px;"><strong>The overall pipeline of the ORIG framework:</strong> ORIG adaptively controls multimodal retrieval and prompt construction, dynamically deciding whether to continue retrieval or proceed based on the current state of accumulated knowledge.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+</div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+  <h1 class="title is-1 mathvista_other">
+    <span class="mathvista_other" style="vertical-align: middle">benchmark</span>
+  </h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="margin-bottom: 2vh;">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h2 class="title is-3">FIG-Eval</h2>
+        <div class="columns is-centered">
+          <div class="column is-10">
+            <div class="content has-text-justified">
+              We introduce FIG-Eval, a curated dataset designed to evaluate whether image-generation models can effectively leverage web-retrieved multimodal evidence to achieve FIG. It covers 10 entity classes and three concept groups, featuring knowledge-intensive prompts that encode implicit, domain-specific facts requiring external evidence beyond parametric knowledge. For reliable assessment, each prompt is paired with human-annotated ground-truth references. From these evidence, we manually derive multimodal QA questions that rigorously operationalize factual correctness, enabling automated scoring via state-of-the-art Vision-Language Models.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <div class="columns is-centered" style="margin-top: 0vh;">
+      <div class="column is-10">
+        <p style="text-align: left; margin-top: 1vh; color: #666; font-size: 13px; margin-bottom: 15px;">
+          <strong>Prompt and Question Distribution Across 10 Entity Classes and Three Concept Categories:</strong> 
+          The entity classes include Animal (An.), Sports (Sp.), Transportation (Tr.), Landmarks (La.), Food (Fo.), 
+          People (Pe.), Plants (Pl.), Products (Pr.), Culture (Cu.), and Events (Ev.).
+        </p>
+
+        <div style="overflow-x:auto;">
+          <table id="stats-table" style="border-collapse: collapse; margin: 10px auto; font-size: 14px; width: 100%; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.08); border: 1px solid #ddd;">
+            <thead>
+              <tr style="background-color: #f5f5f5; color: #333;">
+                <th style="padding:12px 15px; font-weight:600; border-right:1px solid #ddd; border-bottom:2px solid #ccc;">Categories</th>
+                <th style="padding:12px 10px; font-weight:600; border-right:1px solid #ddd; border-bottom:2px solid #ccc;">An.</th>
+                <th style="padding:12px 10px; font-weight:600; border-right:1px solid #ddd; border-bottom:2px solid #ccc;">Sp.</th>
+                <th style="padding:12px 10px; font-weight:600; border-right:1px solid #ddd; border-bottom:2px solid #ccc;">Tr.</th>
+                <th style="padding:12px 10px; font-weight:600; border-right:1px solid #ddd; border-bottom:2px solid #ccc;">La.</th>
+                <th style="padding:12px 10px; font-weight:600; border-right:1px solid #ddd; border-bottom:2px solid #ccc;">Fo.</th>
+                <th style="padding:12px 10px; font-weight:600; border-right:1px solid #ddd; border-bottom:2px solid #ccc;">Pe.</th>
+                <th style="padding:12px 10px; font-weight:600; border-right:1px solid #ddd; border-bottom:2px solid #ccc;">Pl.</th>
+                <th style="padding:12px 10px; font-weight:600; border-right:1px solid #ddd; border-bottom:2px solid #ccc;">Pr.</th>
+                <th style="padding:12px 10px; font-weight:600; border-right:1px solid #ddd; border-bottom:2px solid #ccc;">Cu.</th>
+                <th style="padding:12px 10px; font-weight:600; border-right:1px solid #ddd; border-bottom:2px solid #ccc;">Ev.</th>
+                <th style="padding:12px 10px; font-weight:600; border-bottom:2px solid #ccc;">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="table-row">
+                <td style="padding:12px 15px; font-weight:600; background-color:#f8f9fa; text-align:left; border-bottom:1px solid #e9ecef;">Prompt Number</td>
+                <td style="padding:10px; border-bottom:1px solid #e9ecef;">55</td>
+                <td style="padding:10px; border-bottom:1px solid #e9ecef;">52</td>
+                <td style="padding:10px; border-bottom:1px solid #e9ecef;">50</td>
+                <td style="padding:10px; border-bottom:1px solid #e9ecef;">50</td>
+                <td style="padding:10px; border-bottom:1px solid #e9ecef;">49</td>
+                <td style="padding:10px; border-bottom:1px solid #e9ecef;">52</td>
+                <td style="padding:10px; border-bottom:1px solid #e9ecef;">51</td>
+                <td style="padding:10px; border-bottom:1px solid #e9ecef;">56</td>
+                <td style="padding:10px; border-bottom:1px solid #e9ecef;">50</td>
+                <td style="padding:10px; border-bottom:1px solid #e9ecef;">49</td>
+                <td style="padding:10px; font-weight:600; border-bottom:1px solid #e9ecef; background-color:#fafafa;">514</td>
+              </tr>
+              <tr class="table-row">
+                <td style="padding:12px 15px; font-weight:600; background-color:#f8f9fa; text-align:left; border-bottom:1px solid #e9ecef;">Perceptual Fidelity (PF)</td>
+                <td style="padding:10px; border-bottom:1px solid #e9ecef;">233</td>
+                <td style="padding:10px; border-bottom:1px solid #e9ecef;">197</td>
+                <td style="padding:10px; border-bottom:1px solid #e9ecef;">207</td>
+                <td style="padding:10px; border-bottom:1px solid #e9ecef;">138</td>
+                <td style="padding:10px; border-bottom:1px solid #e9ecef;">116</td>
+                <td style="padding:10px; border-bottom:1px solid #e9ecef;">194</td>
+                <td style="padding:10px; border-bottom:1px solid #e9ecef;">219</td>
+                <td style="padding:10px; border-bottom:1px solid #e9ecef;">287</td>
+                <td style="padding:10px; border-bottom:1px solid #e9ecef;">171</td>
+                <td style="padding:10px; border-bottom:1px solid #e9ecef;">105</td>
+                <td style="padding:10px; font-weight:600; border-bottom:1px solid #e9ecef; background-color:#fafafa;">1,867</td>
+              </tr>
+              <tr class="table-row">
+                <td style="padding:12px 15px; font-weight:600; background-color:#f8f9fa; text-align:left; border-bottom:1px solid #e9ecef;">Compositional Consistency (CC)</td>
+                <td style="padding:10px; border-bottom:1px solid #e9ecef;">120</td>
+                <td style="padding:10px; border-bottom:1px solid #e9ecef;">148</td>
+                <td style="padding:10px; border-bottom:1px solid #e9ecef;">143</td>
+                <td style="padding:10px; border-bottom:1px solid #e9ecef;">148</td>
+                <td style="padding:10px; border-bottom:1px solid #e9ecef;">189</td>
+                <td style="padding:10px; border-bottom:1px solid #e9ecef;">185</td>
+                <td style="padding:10px; border-bottom:1px solid #e9ecef;">117</td>
+                <td style="padding:10px; border-bottom:1px solid #e9ecef;">106</td>
+                <td style="padding:10px; border-bottom:1px solid #e9ecef;">191</td>
+                <td style="padding:10px; border-bottom:1px solid #e9ecef;">243</td>
+                <td style="padding:10px; font-weight:600; border-bottom:1px solid #e9ecef; background-color:#fafafa;">1,590</td>
+              </tr>
+              <tr class="table-row">
+                <td style="padding:12px 15px; font-weight:600; background-color:#f8f9fa; text-align:left; border-bottom:1px solid #e9ecef;">Temporal Consistency (TC)</td>
+                <td style="padding:10px; border-bottom:1px solid #e9ecef;">73</td>
+                <td style="padding:10px; border-bottom:1px solid #e9ecef;">46</td>
+                <td style="padding:10px; border-bottom:1px solid #e9ecef;">44</td>
+                <td style="padding:10px; border-bottom:1px solid #e9ecef;">95</td>
+                <td style="padding:10px; border-bottom:1px solid #e9ecef;">88</td>
+                <td style="padding:10px; border-bottom:1px solid #e9ecef;">40</td>
+                <td style="padding:10px; border-bottom:1px solid #e9ecef;">89</td>
+                <td style="padding:10px; border-bottom:1px solid #e9ecef;">31</td>
+                <td style="padding:10px; border-bottom:1px solid #e9ecef;">65</td>
+                <td style="padding:10px; border-bottom:1px solid #e9ecef;">65</td>
+                <td style="padding:10px; font-weight:600; border-bottom:1px solid #e9ecef; background-color:#fafafa;">636</td>
+              </tr>
+              <tr class="table-row">
+                <td style="padding:12px 15px; font-weight:600; background-color:#f8f9fa; text-align:left;">All Concept Categories</td>
+                <td style="padding:10px; font-weight:500;">426</td>
+                <td style="padding:10px; font-weight:500;">391</td>
+                <td style="padding:10px; font-weight:500;">394</td>
+                <td style="padding:10px; font-weight:500;">381</td>
+                <td style="padding:10px; font-weight:500;">388</td>
+                <td style="padding:10px; font-weight:500;">419</td>
+                <td style="padding:10px; font-weight:500;">425</td>
+                <td style="padding:10px; font-weight:500;">418</td>
+                <td style="padding:10px; font-weight:500;">427</td>
+                <td style="padding:10px; font-weight:500;">413</td>
+                <td style="padding:10px; font-weight:700; background-color:#f0f0f0; color:#333;">4,093</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+  #stats-table .table-row {
+    transition: background-color 0.2s ease;
+  }
+
+  #stats-table .table-row:hover {
+    background-color: #f9f9f9;
+  }
+
+  #stats-table td {
+    color: #333;
+  }
+  </style>
+</section>
+
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <pre><code>
+    <!-- @article{fu2024video,
+      title={Video-MME: The First-Ever Comprehensive Evaluation Benchmark of Multi-modal LLMs in Video Analysis},
+      author={Fu, Chaoyou and Dai, Yuhan and Luo, Yondong and Li, Lei and Ren, Shuhuai and Zhang, Renrui and Wang, Zihan and Zhou, Chenyu and Shen, Yunhang and Zhang, Mengdan and others},
+      journal={arXiv preprint arXiv:2405.21075},
+      year={2024}
+    } -->
+</code></pre>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container" style="width: 60%;">
+  <style>
+      pre {
+        background-color: #f4f4f4;
+        padding: 5px; /* 调整padding为5px */
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        overflow-x: auto; /* 允许水平滚动 */
+    }
+    code {
+        font-family: Consolas, "Courier New", monospace;
+        color: #d63384; /* 代码文本颜色 */
+    }
+  </style>
+
+
+  </div>
+</section>
+
+
+<footer class="footer">
+  <!-- <div class="container"> -->
+    <div class="content has-text-centered">
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p style="text-align: center;">
+            This website is adapted from <a href="https://mathvista.github.io/">MathVista</a>, licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  <!-- </div> -->
+</footer>
+
+</body>
+</html>
+
